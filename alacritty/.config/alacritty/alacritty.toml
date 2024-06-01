@@ -1,5 +1,3 @@
-# theme = "Dracula"
-
 [colors.bright]
 black = "#6272a4"
 blue = "#d6acff"
@@ -45,10 +43,6 @@ foreground = "#f8f8f2"
 background = "#ffb86c"
 foreground = "#44475a"
 
-# [colors.search.footer_bar]
-# background = "#282a36"
-# foreground = "#f8f8f2"
-
 [colors.search.matches]
 background = "#50fa7b"
 foreground = "#44475a"
@@ -65,22 +59,22 @@ text = "CellBackground"
 TERM = "xterm-256color"
 
 [font]
-size = 12.0
+size = 15.0
 
 [font.bold]
-family = "MonacoB"
+family = "Source Code Pro"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "Source Code Pro"
 style = "Bold Italic"
 
 [font.italic]
-family = "Monaco"
+family = "Source Code Pro"
 style = "Italic"
 
 [font.normal]
-family = "Monaco"
+family = "Source Code Pro"
 style = "Regular"
 
 [window.dimensions]

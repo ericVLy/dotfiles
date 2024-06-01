@@ -32,20 +32,20 @@ env:
 #     family: "Hack Nerd Font"
 #     style: "Bold Italic"
 # Monaco series
-font:
-  size: 12.0
-  normal:
-    family: "Monaco"
-    style: "Regular"
-  bold:
-    family: "MonacoB"
-    style: "Bold"
-  italic:
-    family: "Monaco"
-    style: "Italic"
-  bold_italic:
-    family: "JetBrainsMono Nerd Font" # becasue monao series haven't bold&italic
-    style: "Bold Italic"
+# font:
+#   size: 12.0
+#   normal:
+#     family: "Monaco"
+#     style: "Regular"
+#   bold:
+#     family: "MonacoB"
+#     style: "Bold"
+#   italic:
+#     family: "Monaco"
+#     style: "Italic"
+#   bold_italic:
+#     family: "JetBrainsMono Nerd Font" # becasue monao series haven't bold&italic
+#     style: "Bold Italic"
     # family: "MonacoB"
     # style: "Regular"
 
@@ -65,20 +65,20 @@ font:
 #    family: "Cascadia Code"
 #    style: "Bold Italic"
 # Source Code Pro series
-# font:
-#  size: 15.0
-#  normal:
-#    family: "Source Code Pro"
-#    style: "Regular"
-#  bold:
-#    family: "Source Code Pro"
-#    style: "Bold"
-#  italic:
-#    family: "Source Code Pro"
-#    style: "Italic"
-#  bold_italic:
-#    family: "Source Code Pro"
-#    style: "Bold Italic"
+font:
+ size: 15.0
+ normal:
+   family: "Source Code Pro"
+   style: "Regular"
+ bold:
+   family: "Source Code Pro"
+   style: "Bold"
+ italic:
+   family: "Source Code Pro"
+   style: "Italic"
+ bold_italic:
+   family: "Source Code Pro"
+   style: "Bold Italic"
 window:
   #  opacity: 0.8
   dimensions:
@@ -105,9 +105,9 @@ colors:
     focused_match:
       foreground: '#44475a'
       background: '#ffb86c'
-    footer_bar:
-      background: '#282a36'
-      foreground: '#f8f8f2'
+#    footer_bar:
+#      background: '#282a36'
+#      foreground: '#f8f8f2'
   hints:
     start:
       foreground: '#282a36'
@@ -139,4 +139,4 @@ colors:
     magenta: '#ff92df'
     cyan: '#a4ffff'
     white: '#ffffff'
-theme: Dracula
+# theme: Dracula

@@ -8,8 +8,8 @@ WRONG='#880000bb'
 VERIFYING='#bb00bbbb'
 
 i3lock \
---insidever-color=$CLEAR     \
---ringver-color=$VERIFYING   \
+# --insidever-color=$CLEAR     \
+# --ringver-color=$VERIFYING   \
 \
 --insidewrong-color=$CLEAR   \
 --ringwrong-color=$WRONG     \
@@ -44,4 +44,8 @@ i3lock \
 # --keylayout 1                \
 # --time-font="Monaco"        \
 
+
+if [[ $?==0 ]]; then
+        
 xdotool mousemove_relative 1 1 # 该命令用于解决自动锁屏后未展示锁屏界面的问题(移动一下鼠标)
+fi

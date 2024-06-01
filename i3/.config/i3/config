@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $python $HOME/miniconda3/bin/python
+set $python /usr/bin/python
 set $log_file ~/i3_log
 
 set $mod Mod4
@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id sh ~/.config/polybar/launch.sh
 # exec --no-startup-id picom --experimental-backends
-exec --no-startup-id picom
+# exec --no-startup-id picom
 # exec --no-startup-id xfce4-power-manager &
 # clash for windows
 exec --no-startup-id /opt/clash-for-windows-bin/cfw &
@@ -36,8 +36,8 @@ exec --no-startup-id crow &
 exec --no-startup-id pkill -9 dunst; dunst
 # exec --no-startup-id blueman-manager &
 exec --no-startup-id copyq &
-exec --no-startup-id nitrogen --set-scaled ~/my_desktop/backgrouds/ai/暮雨_青い瞳の猫_105138153_p0.png
-
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id fcitx5 &
 exec --no-startup-id kitty $python ~/.config/i3/welcome.py
 # ~/miniconda3/bin/i3expod -m sequential
 # exec_always --no-startup-id $HOME/miniconda3/bin/i3expod -m sequential -w $HOME/my_desktop/backgrouds/Nord-Wallpapers/wallpapers/5.png
@@ -70,8 +70,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status ; exec --no-startup-id "bash $HOME/.config/i3/command.sh vol &"
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec light -A 5 ; exec --no-startup-id "bash $HOME/.config/i3/command.sh backlight &"
-bindsym XF86MonBrightnessDown exec light -U 5 ; exec --no-startup-id "bash $HOME/.config/i3/command.sh backlight &"
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 ; exec --no-startup-id "bash $HOME/.config/i3/command.sh backlight &"
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 ; exec --no-startup-id "bash $HOME/.config/i3/command.sh backlight &"
 
 # bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause 
 bindsym XF86AudioPlay exec --no-startup-id bash -c "pgrep yesplaymusic > /dev/null && playerctl play-pause -p yesplaymusic || playerctl play-pause"
@@ -92,8 +92,8 @@ tiling_drag modifier titlebar
 # bindcode --release 133 exec --no-startup-id $python ~/.scripts/rofi/power.py
 
 # start a terminal
-# bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id alacritty
+# bindsym $mod+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+Shift+q exec --no-startup-id $python ~/.config/i3/KillWindow.py kill >> ~/i3_log 
@@ -101,7 +101,12 @@ bindsym $mod+Control+q exec --no-startup-id $python ~/.config/i3/KillWindow.py f
 # bindsym $mod+Control+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+s exec --no-startup-id rofi -show drun -show-icons 
+bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons 
+
+
+# polybar powermenu: rofi for system power and polybar restart
+bindsym $mod+Shift+p exec --no-startup-id $python ~/.scripts/rofi/power.py
+bindsym $mod+Mod1+p exec --no-startup-id $python ~/.scripts/rofi/restart_app.py
 
 # exec --no-startup-id yakuake
 # bindsym $mod+Escape exec --no-startup-id yakuake

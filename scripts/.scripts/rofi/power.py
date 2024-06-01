@@ -30,13 +30,13 @@ def logout():
 def suspend():
     ret = choose.ChooseYesOrNo("suspend to ram",SLEEP_TIME)
     if ret == "yes":
-        os.system("systemctl suspend ")
+        os.system("bash ~/.scripts/i3lock/lock.sh;systemctl suspend ")
 
 
-def hibernate():
-    ret = choose.ChooseYesOrNo("hibernate to disk",SLEEP_TIME)
-    if ret == "yes":
-        os.system("systemctl hibernate ")
+# def hibernate():
+#     ret = choose.ChooseYesOrNo("hibernate to disk",SLEEP_TIME)
+#     if ret == "yes":
+#         os.system("systemctl hibernate ")
 
 
 def lock():
@@ -50,7 +50,7 @@ def MenuRofi():
         " reboot": "reboot",
         "󰍃 log out": "logout",
         "⏾ suspend to ram": "suspend",
-        "󰒲 hibernate to disk": "hibernate",
+        # "󰒲 hibernate to disk": "hibernate",
         "󰷛 lock": "lock",
     }
     cmd = "echo $(echo -e '"
